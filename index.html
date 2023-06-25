@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mango Shop</title>
+  <style>
+    /* CSS styles for the page layout */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      margin-bottom: 10px;
+    }
+
+    /* CSS styles for the product listing page */
+    .products {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .product {
+      display: flex;
+      align-items: center;
+      width: 300px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      margin-right: 20px;
+      margin-bottom: 20px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    }
+
+    .product-image {
+      width: 100px;
+      height: 100px;
+      margin-right: 10px;
+    }
+
+    .product-details {
+      flex: 1;
+    }
+
+    .product-title {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .product-price {
+      font-size: 14px;
+      color: #888;
+    }
+
+    .add-to-cart-button {
+      padding: 5px 10px;
+      background-color: #FFA500;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .add-to-cart-button:hover {
+      background-color: #FFA500;
+    }
+
+    /* CSS styles for the shopping cart */
+    .cart 
+    {
+      margin-top: 20px;
+    }
+
+    .cart-item 
+    {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    .cart-item-image {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+    }
+
+    .cart-item-details {
+      flex: 1;
+    }
+
+    .cart-item-title {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .cart-item-price {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .cart-total {
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+
+    .checkout-button {
+      padding: 10px 20px;
+      background-color: #FF0000;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .checkout-button:hover {
+      background-color: #FF0000;
+    }
+
+    /* CSS styles for the checkout section */
+    .checkout {
+      margin-top: 20px;
+      display: none;
+    }
+
+    .checkout h2 {
+      margin-bottom: 10px;
+    }
+
+    .checkout-form input {
+      margin-bottom: 10px;
+      padding: 5px;
+      width: 100%;
+    }
+
+    .checkout-form button {
+      padding: 10px 20px;
+      background-color: #228B22;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .checkout-form button:hover {
+      background-color: #228B22;
+    }
+  </style>
+</head>
+<body>
+  <h1>Mango Shop</h1>
+
+  <h2>Product Listing</h2>
+
+  <div class="products">
+    <div class="product">
+      <img src="download.jpg" alt="Mango 1" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Delicious Mango</h3>
+        <p class="product-price">$10.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Delicious Mango', 10.99)">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="product">
+      <img src="C:\Users\TOPPER\Desktop\website\mango.jpg" alt="Mango 2" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Sweet Mango</h3>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Sweet Mango', 12.99)">Add to Cart</button>
+      </div>
+    </div>
+
+     <div class="product">
+      <img src="C:\Users\TOPPER\Desktop\website\download1.jpg" alt="Mango 2" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Sweet Mango</h3>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Sweet Mango', 12.99)">Add to Cart</button>
+      </div>
+  </div>
+
+  <div class="product">
+      <img src="C:\Users\TOPPER\Desktop\website\download2.jpg" alt="Mango 2" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Sweet Mango</h3>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Sweet Mango', 12.99)">Add to Cart</button>
+      </div>
+  </div>
+
+  <div class="product">
+      <img src="C:\Users\TOPPER\Desktop\website\download3.jpg" alt="Mango 2" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Sweet Mango</h3>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Sweet Mango', 12.99)">Add to Cart</button>
+      </div>
+  </div>
+
+  <div class="product">
+      <img src="C:\Users\TOPPER\Desktop\website\download4.jpg" alt="Mango 2" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Sweet Mango</h3>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Sweet Mango', 12.99)">Add to Cart</button>
+      </div>
+  </div>
+
+  <div class="product">
+      <img src="C:\Users\TOPPER\Desktop\website\download5.jpg" alt="Mango 2" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Sweet Mango</h3>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Sweet Mango', 12.99)">Add to Cart</button>
+      </div>
+  </div>
+
+  <div class="product">
+      <img src="C:\Users\TOPPER\Desktop\website\download6.jpg" alt="Mango 2" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Sweet Mango</h3>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Sweet Mango', 12.99)">Add to Cart</button>
+      </div>
+  </div>
+
+  <div class="product">
+      <img src="C:\Users\TOPPER\Desktop\website\download7.jpg" alt="Mango 2" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Sweet Mango</h3>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Sweet Mango', 12.99)">Add to Cart</button>
+      </div>
+  </div>
+
+  <div class="product">
+      <img src="C:\Users\TOPPER\Desktop\website\download8.jpg" alt="Mango 2" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Sweet Mango</h3>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Sweet Mango', 12.99)">Add to Cart</button>
+      </div>
+  </div>
+
+  <div class="product">
+      <img src="C:\Users\TOPPER\Desktop\website\download9.jpg" alt="Mango 2" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Sweet Mango</h3>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Sweet Mango', 12.99)">Add to Cart</button>
+      </div>
+  </div>
+
+  <div class="product">
+      <img src="C:\Users\TOPPER\Desktop\website\download2.jpg" alt="Mango 2" class="product-image">
+      <div class="product-details">
+        <h3 class="product-title">Sweet Mango</h3>
+        <p class="product-price">$12.99</p>
+        <button class="add-to-cart-button" onclick="addToCart('Sweet Mango', 12.99)">Add to Cart</button>
+      </div>
+  </div>
+  <h2>Shopping Cart</h2>
+
+  <div class="cart">
+    <div id="cart-items">
+      <!-- Cart items will be dynamically added here -->
+    </div>
+    <p class="cart-total">Total: $<span id="cart-total">0</span></p>
+    <button class="checkout-button" onclick="checkout()">Checkout</button>
+  </div>
+
+  <div class="checkout">
+    <h2>Checkout</h2>
+    <form class="checkout-form" onsubmit="event.preventDefault();">
+      <input type="text" placeholder="Name" required>
+       <input type="text" placeholder="Phone Number" required>
+      <input type="email" placeholder="Email" required>
+      <input type="text" placeholder="Address" required>
+      <button class="checkout-button" onclick="placeOrder()">Place Order</button>
+    </form>
+  </div>
+
+  <script>
+    // JavaScript code for shopping cart functionality
+    let cartItems = [];
+    let cartTotal = 0;
+
+    function addToCart(title, price) {
+      cartItems.push({ title, price });
+      cartTotal += price;
+
+      updateCart();
+    }
+
+    function removeFromCart(index) {
+      cartTotal -= cartItems[index].price;
+      cartItems.splice(index, 1);
+
+      updateCart();
+    }
+
+    function updateCart() {
+      const cartItemsContainer = document.getElementById('cart-items');
+      const cartTotalElement = document.getElementById('cart-total');
+
+      // Clear cart items
+      cartItemsContainer.innerHTML = '';
+
+      // Render cart items
+      cartItems.forEach((item, index) => {
+        const cartItemElement = document.createElement('div');
+        cartItemElement.className = 'cart-item';
+
+        const imageElement = document.createElement('img');
+        imageElement.src = 'jpg';
+        imageElement.alt = item.title;
+        imageElement.className = 'cart-item-image';
+
+        const detailsElement = document.createElement('div');
+        detailsElement.className = 'cart-item-details';
+
+        const titleElement = document.createElement('h4');
+        titleElement.className = 'cart-item-title';
+        titleElement.textContent = item.title;
+
+        const priceElement = document.createElement('p');
+        priceElement.className = 'cart-item-price';
+        priceElement.textContent = `$${item.price}`;
+
+        const removeButton = document.createElement('button');
+        removeButton.textContent = 'Remove';
+        removeButton.onclick = () => removeFromCart(index);
+
+        detailsElement.appendChild(titleElement);
+        detailsElement.appendChild(priceElement);
+        cartItemElement.appendChild(imageElement);
+        cartItemElement.appendChild(detailsElement);
+        cartItemElement.appendChild(removeButton);
+        cartItemsContainer.appendChild(cartItemElement);
+      });
+
+      // Update cart total
+      cartTotalElement.textContent = cartTotal.toFixed(2);
+    }
+
+    function checkout() {
+      const checkoutSection = document.querySelector('.checkout');
+      checkoutSection.style.display = 'block';
+    }
+
+    function placeOrder() {
+      const checkoutForm = document.querySelector('.checkout-form');
+      const nameInput = checkoutForm.querySelector('input[type="text"]');
+       const numberInput = checkoutForm.querySelector('input[type="digit"]');
+      const emailInput = checkoutForm.querySelector('input[type="email"]');
+      const addressInput = checkoutForm.querySelector('input[type="text"]');
+
+      const name = nameInput.value;
+      const email = emailInput.value;
+      const address = addressInput.value;
+
+      // Process the order (e.g., send to backend, save to database, etc.)
+
+      // Clear cart and show thank you message
+      cartItems = [];
+      cartTotal = 0;
+      updateCart();
+
+      alert(`Thank you, ${name}! Your order has been placed.`);
+    }
+  </script>
+</body>
+</html>
